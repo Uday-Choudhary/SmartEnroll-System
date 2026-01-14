@@ -131,11 +131,11 @@ The application will launch at `http://localhost:5173`.
 
 We've made testing easy. Go to the **Login Page** and you will see a list of pre-configured test accounts for every role:
 
-| Role | Email | Password |
+| Room | Email | Password |
 |------|-------|----------|
-| **Admin** | `admin@example.com` | `admin123` |
-| **Faculty** | `faculty@example.com` | `faculty123` |
-| **Student** | `student@example.com` | `student123` |
+| **Admin** | `admin@smartenroll.com` | `Password@123` |
+| **Faculty** | `rajesh.sharma@smartenroll.com` | `Password@123` |
+| **Student** | `aarav.patel@student.smartenroll.com` | `Password@123` |
 
 You can also **Register** a new account. Select "Admin", "Faculty", or "Student" from the dropdown during sign-up.
 

@@ -186,15 +186,15 @@ const LoginPage = () => {
                 <div className="grid grid-cols-1 gap-2 text-sm">
                   <div className="flex justify-between items-center p-2 bg-gray-50 rounded border border-gray-100">
                     <span className="font-medium text-gray-700">Admin</span>
-                    <span className="text-gray-500 font-mono text-xs">admin@example.com / admin123</span>
+                    <span className="text-gray-500 font-mono text-xs">admin@smartenroll.com / Password@123</span>
                   </div>
                   <div className="flex justify-between items-center p-2 bg-gray-50 rounded border border-gray-100">
                     <span className="font-medium text-gray-700">Faculty</span>
-                    <span className="text-gray-500 font-mono text-xs">faculty@example.com / faculty123</span>
+                    <span className="text-gray-500 font-mono text-xs">rajesh.sharma@smartenroll.com / Password@123</span>
                   </div>
                   <div className="flex justify-between items-center p-2 bg-gray-50 rounded border border-gray-100">
                     <span className="font-medium text-gray-700">Student</span>
-                    <span className="text-gray-500 font-mono text-xs">student@example.com / student123</span>
+                    <span className="text-gray-500 font-mono text-xs">aarav.patel@student.smartenroll.com / Password@123</span>
                   </div>
                 </div>
               </div>
