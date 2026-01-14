@@ -180,6 +180,24 @@ const LoginPage = () => {
                   </p>
                 </div>
               </form>
+
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Test Credentials</p>
+                <div className="grid grid-cols-1 gap-2 text-sm">
+                  <div className="flex justify-between items-center p-2 bg-gray-50 rounded border border-gray-100">
+                    <span className="font-medium text-gray-700">Admin</span>
+                    <span className="text-gray-500 font-mono text-xs">admin@example.com / admin123</span>
+                  </div>
+                  <div className="flex justify-between items-center p-2 bg-gray-50 rounded border border-gray-100">
+                    <span className="font-medium text-gray-700">Faculty</span>
+                    <span className="text-gray-500 font-mono text-xs">faculty@example.com / faculty123</span>
+                  </div>
+                  <div className="flex justify-between items-center p-2 bg-gray-50 rounded border border-gray-100">
+                    <span className="font-medium text-gray-700">Student</span>
+                    <span className="text-gray-500 font-mono text-xs">student@example.com / student123</span>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </motion.div>
