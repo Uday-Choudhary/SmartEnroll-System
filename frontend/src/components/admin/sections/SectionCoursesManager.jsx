@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import toast from 'react-hot-toast';
 import { addCourseToSection } from '../../../api/sections'
 import { getAllCourses } from '../../../api/courses'
 import { getAllFaculty } from '../../../api/faculty'
@@ -43,7 +44,7 @@ const SectionCoursesManager = ({ section, onClose }) => {
                 courseId: parseInt(selectedCourseId),
                 facultyId: selectedFacultyId || null
             })
-            alert('Course added successfully!')
+            toast.success('Course added successfully!')
             onClose() // Close to refresh parent
         } catch (err) {
             setError(err.message || err.data?.error || 'Failed to add course')

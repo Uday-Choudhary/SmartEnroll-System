@@ -5,6 +5,7 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 import Home from "./pages/Home";
 import LoginPage from "./pages/Auth/LoginPage";
@@ -52,6 +53,7 @@ function App() {
   return (
     <BrowserRouter>
       <SearchProvider>
+        <Toaster position="top-right" reverseOrder={false} />
         <AppContent />
       </SearchProvider>
     </BrowserRouter>

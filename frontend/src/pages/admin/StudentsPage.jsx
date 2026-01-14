@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import FormModal from "../../components/admin/common/FormModal";
 import Pagination from "../../components/admin/common/Pagination";
 import Table from "../../components/admin/common/Table";
@@ -58,7 +59,7 @@ const StudentsPage = () => {
       closeModal();
     } catch (err) {
       console.error("Error creating student:", err);
-      alert("Failed to create student.");
+      toast.error("Failed to create student.");
     }
   };
 
@@ -70,7 +71,7 @@ const StudentsPage = () => {
       closeModal();
     } catch (err) {
       console.error("Error deleting student:", err);
-      alert("Failed to delete student.");
+      toast.error("Failed to delete student.");
     }
   };
 
@@ -82,7 +83,7 @@ const StudentsPage = () => {
       closeModal();
     } catch (err) {
       console.error("Error updating student:", err);
-      alert("Failed to update student.");
+      toast.error("Failed to update student.");
     }
   };
 

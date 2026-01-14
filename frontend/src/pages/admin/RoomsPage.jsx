@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import { getAllRooms, deleteRoom } from "../../api/rooms";
 import Pagination from "../../components/admin/common/Pagination";
 import Table from "../../components/admin/common/Table";
@@ -56,7 +57,7 @@ const RoomsPage = () => {
             loadRooms();
             closeModal();
         } catch (err) {
-            alert(err.message || "Failed to delete room");
+            toast.error(err.message || "Failed to delete room");
         }
     };
 

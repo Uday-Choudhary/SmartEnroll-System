@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { createCourse, updateCourse } from '../../../api/courses'
 import { getAllTerms } from '../../../api/terms'
 import { getAllFaculty } from '../../../api/faculty'
@@ -86,10 +87,10 @@ const CourseForm = ({ course, onClose }) => {
     try {
       if (course) {
         await updateCourse(course.id, formData)
-        alert('Course updated successfully!')
+        toast.success('Course updated successfully!')
       } else {
         await createCourse(formData)
-        alert('Course created successfully!')
+        toast.success('Course created successfully!')
       }
       onClose()
     } catch (err) {

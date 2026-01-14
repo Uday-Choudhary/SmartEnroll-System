@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import { createRoom, updateRoom } from "../../../api/rooms";
 
 const RoomForm = ({ room, onClose }) => {
@@ -24,10 +25,10 @@ const RoomForm = ({ room, onClose }) => {
     try {
       if (room) {
         await updateRoom(room.id, formData);
-        alert("Room updated successfully!");
+        toast.success("Room updated successfully!");
       } else {
         await createRoom(formData);
-        alert("Room created successfully!");
+        toast.success("Room created successfully!");
       }
       onClose();
     } catch (err) {

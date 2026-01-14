@@ -1,5 +1,6 @@
 import TeacherView from "../../components/admin/faculty/TeacherView"; // Import TeacherView
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import Table from "../../components/admin/faculty/Table";
 import TableSearch from "../../components/admin/common/TableSearch";
 import FormModal from "../../components/admin/common/FormModal";
@@ -60,7 +61,7 @@ const FacultyPage = () => {
       closeModal();
     } catch (err) {
       console.error("Error creating faculty:", err);
-      alert("Failed to create faculty. Please try again.");
+      toast.error("Failed to create faculty. Please try again.");
     }
   };
 
@@ -71,7 +72,7 @@ const FacultyPage = () => {
       closeModal();
     } catch (err) {
       console.error("Error deleting faculty:", err);
-      alert("Failed to delete faculty. Please try again.");
+      toast.error("Failed to delete faculty. Please try again.");
     }
   };
 
@@ -82,7 +83,7 @@ const FacultyPage = () => {
       closeModal();
     } catch (err) {
       console.error("Error updating faculty:", err);
-      alert("Failed to update faculty. Please try again.");
+      toast.error("Failed to update faculty. Please try again.");
     }
   };
 

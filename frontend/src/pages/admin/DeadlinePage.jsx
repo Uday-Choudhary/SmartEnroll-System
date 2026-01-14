@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import Table from "../../components/admin/common/Table";
 import TableSearch from "../../components/admin/common/TableSearch";
 import Pagination from "../../components/admin/common/Pagination";
@@ -72,7 +73,7 @@ const DeadlinesPage = () => {
             await deleteDeadlineApi(selectedDeadline.id);
             closeModal();
         } catch (err) {
-            alert("Failed to delete deadline");
+            toast.error("Failed to delete deadline");
             console.error(err);
         }
     };

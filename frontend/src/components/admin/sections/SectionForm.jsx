@@ -1,6 +1,7 @@
 // This is the form component for creating and editing sections
 // It receives a section prop - if section exists, we're editing; if null, we're creating
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 import { createSection, updateSection } from '../../../api/sections'
 import { getAllTerms } from '../../../api/terms'
 
@@ -81,11 +82,11 @@ const SectionForm = ({ section, onClose }) => {
       if (section) {
         // Update existing section - call API with section ID and new data
         await updateSection(section.id, submitData)
-        alert('Section updated successfully!')
+        toast.success('Section updated successfully!')
       } else {
         // Create new section - call API with form data
         await createSection(submitData)
-        alert('Section created successfully!')
+        toast.success('Section created successfully!')
       }
       // Close form and refresh list (handled by parent component)
       onClose()

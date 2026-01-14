@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import { createTerm, updateTerm } from "../../../api/terms";
 
 const TermForm = ({ term, onClose }) => {
@@ -30,10 +31,10 @@ const TermForm = ({ term, onClose }) => {
     try {
       if (term) {
         await updateTerm(term.id, formData);
-        alert("Term updated successfully!");
+        toast.success("Term updated successfully!");
       } else {
         await createTerm(formData);
-        alert("Term created successfully!");
+        toast.success("Term created successfully!");
       }
       onClose();
     } catch (err) {

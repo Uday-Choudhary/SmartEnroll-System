@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import { createSchedule, updateSchedule } from "../../../api/schedules";
 import { getAllRooms } from "../../../api/rooms";
 import { getAllSections } from "../../../api/sections";
@@ -90,10 +91,10 @@ const ScheduleForm = ({ schedule, onClose }) => {
     try {
       if (schedule) {
         await updateSchedule(schedule.id, formData);
-        alert("Schedule updated successfully!");
+        toast.success("Schedule updated successfully!");
       } else {
         await createSchedule(formData);
-        alert("Schedule created successfully!");
+        toast.success("Schedule created successfully!");
       }
       onClose(true); // Close modal and reload data
     } catch (err) {

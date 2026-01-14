@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import { getAllSchedules, deleteSchedule } from "../../api/schedules";
 import Pagination from "../../components/admin/common/Pagination";
 import Table from "../../components/admin/common/Table";
@@ -96,11 +97,11 @@ const SchedulesPage = () => {
         try {
             console.log("Deleting schedule:", id);
             await deleteSchedule(id);
-            alert("Schedule deleted successfully!");
+            toast.success("Schedule deleted successfully!");
             loadSchedules();
         } catch (err) {
             console.error("Delete error:", err);
-            alert(err.message || "Failed to delete schedule");
+            toast.error(err.message || "Failed to delete schedule");
         }
     };
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -82,10 +83,10 @@ const DeadlineForm = ({ type, data, onClose }) => {
         try {
             if (type === "create") {
                 await createDeadline(formData);
-                alert("Deadline created successfully!");
+                toast.success("Deadline created successfully!");
             } else {
                 await updateDeadline(data.id, formData);
-                alert("Deadline updated successfully!");
+                toast.success("Deadline updated successfully!");
             }
             onClose();
         } catch (err) {

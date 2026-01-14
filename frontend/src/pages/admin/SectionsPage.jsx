@@ -1,5 +1,6 @@
 // sections management where admin can create,edit,and delete sections
 import React, { useState, useEffect } from 'react'
+import toast from 'react-hot-toast';
 import { getAllSections, deleteSection } from '../../api/sections'
 import Pagination from "../../components/admin/common/Pagination";
 import Table from "../../components/admin/faculty/Table";
@@ -61,7 +62,7 @@ const SectionsPage = () => {
             loadSections()
             closeModal()
         } catch (err) {
-            alert(err.message || 'Failed to delete section')
+            toast.error(err.message || 'Failed to delete section')
         }
     }
 
@@ -74,7 +75,7 @@ const SectionsPage = () => {
                     : 'No courses'}
             </td>
             <td className="hidden md:table-cell text-gray-700">
-                {item.term ? `${item.term.year} - ${item.term.semester}` : 'N/A'}
+                {item.term ? `${item.term.year} - ${item.term.semester} ` : 'N/A'}
             </td>
             <td className="hidden lg:table-cell text-gray-700">{item.capacity}</td>
             <td className="pr-4">

@@ -1,5 +1,6 @@
 // courses management where admin can create,edit,and delete courses
 import React, { useState, useEffect } from 'react'
+import toast from 'react-hot-toast';
 import { getAllCourses, deleteCourse } from '../../api/courses'
 import Pagination from "../../components/admin/common/Pagination";
 import Table from "../../components/admin/faculty/Table";
@@ -59,7 +60,7 @@ const CoursesPage = () => {
             loadCourses()
             closeModal()
         } catch (err) {
-            alert(err.message || 'Failed to delete course')
+            toast.error(err.message || 'Failed to delete course')
         }
     }
 
